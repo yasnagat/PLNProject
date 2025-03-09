@@ -1,0 +1,10 @@
+Ao menos desde a manhã da terça-feira (4) de carnaval, quem tenta acessar o portal do STJ é encaminhado para uma página de validação prévia, antes de que possa acessar o site.
+De acordo com o setor de tecnologia do tribunal, a medida tem como objetivo evitar que o portal seja derrubado por um ataque do tipo “Negação de Serviço” (Denial of Service ou DoS, na sigla em inglês). 
+Esse tipo de ofensiva hacker envia um número exagerado de solicitações de acesso aos servidores de algum site, por exemplo, fazendo com que a página saia do ar.
+“Para lidar com a situação, como é de praxe, foram ativados mecanismos como a validação de acesso do usuário humano, o que pode causar lentidão, porém sem comprometer o funcionamento do portal e de seus serviços”, disse o STJ.
+A Agência Brasil conseguiu acessar o portal do STJ nesta quarta-feira (5), mas foi preciso realizar a verificação de segurança diversas vezes durante a navegação. 
+Ao tentar acessar o sistema público de busca por processos, na maior parte das tentativas houve erro e a página não foi encontrada. 
+Outros sistemas, contudo, como o peticionamento eletrônico e a busca jurisprudencial, funcionaram normalmente. 
+Não é a primeira vez que o STJ é alvo de hackers. 
+Em setembro do ano passado, os sistemas do tribunal chegaram a ser paralisados por alguns minutos. 
+Em 2020, uma ofensiva cibernética interrompeu julgamentos e prejudicou o funcionamento dos sistemas judiciais por cerca de cinco dias.
