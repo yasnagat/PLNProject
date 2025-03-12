@@ -1,5 +1,9 @@
 import spacy
 
+from nltk import sent_tokenize
+
+nlp = spacy.load("pt_core_news_lg")
+
 # funcao de abertura do arquivo
 def read_archive(d_archive_name):
     with open(d_archive_name, encoding="utf8") as archive_content:
@@ -8,33 +12,25 @@ def read_archive(d_archive_name):
 
 # funcao que retira as stopwords e retorna o conteudo em formato de string/texto
 def clear_content(d_initial_content):
-    lib = spacy.load("pt_core_news_lg")
-    content = lib(d_initial_content)
-    cleared_content = ' '.join([token.text for token in content if not token.is_stop and not token.is_punct or token.is_bracket])
-
+    content = nlp(d_initial_content)
+    cleared_content = ' '.join([token.text for token in content if not token.is_stop and token.text != ','])
     return cleared_content
 
 # funcao que tokeniza o conteudo do texto por sentencas
 def tokenize_content(d_cleared_content):
-    lib = spacy.load("pt_core_news_lg")
-    content = lib(d_cleared_content)
-    list_sentences = [sentence for sentence in content.sents]
-    return list_sentences
+    sentences = sent_tokenize(d_cleared_content, language="portuguese")
+    return sentences
 
 # funcao que determina a similaridade entre as sentencas do texto
 def semantic_similarity(d_list_sentences):
-    cont = 0
-    for i in range (0, len(d_list_sentences) - 1):
-        print("-----------", i, "----------------")
-
-        calc_similarity = d_list_sentences[i].similarity(d_list_sentences[i+1])
-        cont += 1
+    for i in range(len(d_list_sentences)-1):
+        calc_similarity = nlp(d_list_sentences[i]).similarity(nlp(d_list_sentences[i+1]))
+        print("-------------------", i, "---------------------")
         print("Primeira sentença: ", d_list_sentences[i])
         print("Segunda sentença: ", d_list_sentences[i+1])
-
-        print("Similaridade: ",calc_similarity)
-    print(cont)
-
+        print("Similaridade: ", calc_similarity)
+def subtopics(similar_sentences):
+    print()
 
 # main program
 print("""NLP EXTRACTOR INITIALIZED...
